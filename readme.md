@@ -18,7 +18,7 @@ Here is how I understand the three parts:
 
 ### How I Wrote the Code
 
-Since I work with hardware (like Verilog) and microcontrollers (like STM32), writing a digital PID controller means translating calculus into simple math that digital circuits or processors can handle on every clock cycle.
+writing a digital PID controller means translating calculus into simple math that digital circuits or processors can handle on every clock cycle.
 
 Here is how the logic works under the hood:
 
@@ -28,15 +28,3 @@ Here is how the logic works under the hood:
 4. **Calculate I:** Add the current error to a running total, then multiply by `Ki`.
 5. **Calculate D:** Subtract the previous error from the current error to find the rate of change, then multiply by `Kd`.
 6. **Output:** Add P + I + D together and send that signal out (usually as a PWM signal to control a motor's speed).
-
-### Files in this Repo
-
-* The main logic files (where the P, I, and D equations are calculated step-by-step).
-* Testbench / Simulation files. I used these to feed dummy sensor data into the controller to make sure the math works before hooking it up to real motors.
-
-### How to Run It
-
-1. Clone this repository to your computer:
-
-   ```bash
-   git clone [https://github.com/Adarsh20654/PID.git](https://github.com/Adarsh20654/PID.git)
